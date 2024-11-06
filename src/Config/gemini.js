@@ -1,4 +1,8 @@
-//npm install @google/generative-ai
+/*
+ * Install the Generative AI SDK
+ *
+ * $ npm install @google/generative-ai
+ */ 
 
 import {
     GoogleGenerativeAI,
@@ -6,7 +10,7 @@ import {
     HarmBlockThreshold,
   } from "@google/generative-ai";
   
-  const apiKey = process.env.VITE_GEMINI_API_KEY;
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
   
   const model = genAI.getGenerativeModel({
@@ -23,13 +27,16 @@ import {
   
   async function run(prompt) {
     const chatSession = model.startChat({
+    // safetySettings: Adjust safety settings
+    // See https://ai.google.dev/gemini-api/docs/safety-settings
       generationConfig,
       history: [],
     });
   
-    const result = await chatSession.sendMessage("prompt");
+    const result = await chatSession.sendMessage(prompt);
     const response = result.response.text();
     console.log(result.response.text());
+    return response;
   }
   
-  export default run()
+  export default run
