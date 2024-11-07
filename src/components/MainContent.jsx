@@ -108,10 +108,10 @@ const MainContent = () => {
             <div className="flex gap-4 items-center">
               <MdOutlineAddPhotoAlternate className="text-2xl cursor-pointer" />
               <FaMicrophone className="text-2xl cursor-pointer" />
-              <IoMdSend
+              {input && (<IoMdSend
                 onClick={() => onSent()}
                 className="text-2xl cursor-pointer"
-              />
+              />)}
             </div>
           </div>
           <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-500">
@@ -121,7 +121,7 @@ const MainContent = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainContent;
+export default MainContent
