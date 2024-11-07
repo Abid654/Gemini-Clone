@@ -34,7 +34,7 @@ const MainContent = () => {
             <div className="my-12 text-[56px] text-slate-500 font-semibold p-5">
               <p>
                 <span className="bg-gradient-to-r from-[#368ddd] to-[#ff5546] bg-clip-text text-transparent">
-                  Hello, Mian Abid.
+                  Hello, Muhammad Abid!
                 </span>
               </p>
               <p className="text-slate-400">How can I help you today?</p>
@@ -88,7 +88,7 @@ const MainContent = () => {
                 </div>
               ) : (
                 <p
-                  dangerouslySetInnerHTML={{__html: resultData}}
+                  dangerouslySetInnerHTML={{ __html: resultData }}
                   className="text-lg front-[400] leading-[1.8]"
                 ></p>
               )}
@@ -108,10 +108,12 @@ const MainContent = () => {
             <div className="flex gap-4 items-center">
               <MdOutlineAddPhotoAlternate className="text-2xl cursor-pointer" />
               <FaMicrophone className="text-2xl cursor-pointer" />
-              {input && (<IoMdSend
-                onClick={() => onSent()}
-                className="text-2xl cursor-pointer"
-              />)}
+              {input && (
+                <IoMdSend
+                  onClick={() => onSent()}
+                  className="text-2xl cursor-pointer"
+                />
+              )}
             </div>
           </div>
           <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-500">
@@ -121,7 +123,7 @@ const MainContent = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainContent
+export default MainContent;
